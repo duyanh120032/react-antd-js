@@ -17,6 +17,31 @@ export const routes = [
     icon: <DesktopOutlined />,
     key: '/',
     label: 'Home',
+    children: [
+      {
+        component: <>Home child</>,
+        icon: <DesktopOutlined />,
+        key: '/home1',
+        label: 'Home',
+      },
+      {
+        component: <Home/>,
+        icon: <DesktopOutlined />,
+        key: '/',
+        label: 'Home',
+        children: [
+          {
+            component: <>Home child child</>,
+            icon: <DesktopOutlined />,
+            key: '/home1/child1',
+            label: 'Home child child ',
+            meta:{
+                title: 'Home child child'
+            }
+          }
+        ]
+      }
+    ],
   },
   {
     component: <About />,
