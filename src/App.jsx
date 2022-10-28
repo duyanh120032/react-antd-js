@@ -1,25 +1,22 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import { Route, Routes,Link } from "react-router-dom";
+import { Layout } from "antd";
+import { RouterContent } from "./Routes";
+import SideMenu from "./Layout/SideMenu/index.jsx";
 
+const { Header, Content, Footer } = Layout;
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      {/* header */}
-      <nav>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="about">About</Link>
-      </nav>
-      <Routes>
-        header here
-        <Route path="" element={<div>Home</div>} />
-        <Route path="/about" element={<div>about</div>} />
-        footer here
-      </Routes>
-    </div>
+    <Layout style={{ minHeight: '100vh' }}>
+        <SideMenu/>
+        <Layout className="site-layout">
+            <Header className="site-layout-background" />
+            <Content className="px-4 py-4">
+                <RouterContent />
+            </Content>
+            <Footer style={{ textAlign: 'center' }}>
+                Dashboard Template ©2022 Created by 10% Engineer
+            </Footer>
+        </Layout>
+    </Layout>
   );
 }
 
